@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+.app {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #111827;
+    color: white;
+    height: 100vh;
+    padding: 10px;
+}
+
+.new-chat, #darkModeBtn {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#history div {
+    padding: 8px;
+    margin-top: 5px;
+    background: #1f2937;
+    cursor: pointer;
+}
+
+/* Chat */
+#chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Messages */
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+.user {
+    background: #2563eb;
+    color: white;
+    margin-left: auto;
+}
+
+.ai {
+    background: #e5e7eb;
+}
+
+/* Input */
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#input {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Welcome */
+#welcome {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.card {
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+/* Hamburger */
+#menuBtn {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #menuBtn {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        height: 100%;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    #chat {
+        width: 100%;
+    }
+}
+
+/* Dark Mode */
+body.dark {
+    background: #0f172a;
+    color: white;
+}
+
+body.dark .sidebar {
+    background: #020617;
+}
+
+body.dark #chat {
+    background: #020617;
+}
+
+body.dark .ai {
+    background: #1e293b;
+    color: white;
+}
+
+body.dark .card {
+    background: #1e293b;
+    color: white;
+}
+
+body.dark input {
+    background: #020617;
+    color: white;
+    border: 1px solid #334155;
+}
